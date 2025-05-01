@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>password generator</title>
+    <style>
+        .settings-block {
+            margin-bottom: 1em;
+        }
+
+        .settings-block .settings-block-line {
+            display: block;
+        }
+
+        .settings-block .settings-block-line .settings-block-line-title {
+            display: inline-block;
+            width: 6em;
+            font-weight: bold;
+        }
+
+        .settings-block .settings-block-line .settings-block-line-set {
+            width: 20em;
+        }
+
+        .settings-block .settings-block-line .settings-block-line-count {
+            width: 3em;
+        }
+
+        .keyword-block {
+            margin-bottom: 1em;
+            font-weight: bold;
+        }
+
+        .keyword-block .keyword-block-line-title {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="">
+        <h1 class="">password generator</h1>
+
+        <div id="settings-block" class="">
+            <h2 class=""># characters and counts</h2>
+
+            <div class="settings-block">
+                <span class="settings-block-line">
+                    <label id="number-title" class="settings-block-line-title" for="number-set">- numbers</label>
+                    <input id="number-clear" class="" type="button" value="clear">
+                    <input id="number-default" class="" type="button" value="default">
+                </span>
+                <span class="settings-block-line">
+                    <input id="number-set" class="settings-block-line-set" type="text" value="0123456789">
+                    <input id="number-count" class="settings-block-line-count" type="number" value="2" min="0">
+                </span>
+            </div>
+            <div class="settings-block">
+                <span class="settings-block-line">
+                    <label id="lower-title" class="settings-block-line-title" for="lower-set">- lower</label>
+                    <input id="lower-clear" class="" type="button" value="clear">
+                    <input id="lower-default" class="" type="button" value="default">
+                </span>
+                <span class="settings-block-line">
+                    <input id="lower-set" class="settings-block-line-set" type="text"
+                        value="abcdefghijklmnopqrstuvwxyz">
+                    <input id="lower-count" class="settings-block-line-count" type="number" value="2" min="0">
+                </span>
+            </div>
+            <div class="settings-block">
+                <span class="settings-block-line">
+                    <label id="upper-title" class="settings-block-line-title" for="upper-set">- upper</label>
+                    <input id="upper-clear" class="" type="button" value="clear">
+                    <input id="upper-default" class="" type="button" value="default">
+                </span>
+                <span class="settings-block-line">
+                    <input id="upper-set" class="settings-block-line-set" type="text"
+                        value="ABCDEFGHIJKLMNOPQRSTUVWXYZ">
+                    <input id="upper-count" class="settings-block-line-count" type="number" value="2" min="0">
+                </span>
+            </div>
+            <div class="settings-block">
+                <span class="settings-block-line">
+                    <label id="symbol-title" class="settings-block-line-title" for="symbol-set">- symbols</label>
+                    <input id="symbol-clear" class="" type="button" value="clear">
+                    <input id="symbol-default" class="" type="button" value="default">
+                    <input id="symbol-with-space" class="" type="button" value="with spaces">
+                </span>
+                <span class="settings-block-line">
+                    <input id="symbol-set" class="settings-block-line-set" type="text"
+                        value="&#33;&#34;&#35;&#36;&#37;&#38;&#39;&#40;&#41;&#42;&#43;&#44;&#45;&#46;&#47;&#58;&#59;&#60;&#61;&#62;&#63;&#64;&#91;&#92;&#93;&#94;&#95;&#96;&#123;&#124;&#125;&#126;">
+                    <input id="symbol-count" class="settings-block-line-count" type="number" value="2" min="0">
+                </span>
+            </div>
+        </div>
+
+        <div class="">
+            <h2 class=""># keywords and passwords</h2>
+
+            <div class="keyword-block master-keyword-block">
+                <div class="">
+                    <label class="keyword-block-line-title" for="master-keyword-text">- master keyword</label>
+                    <input id="master-keyword-text" class="" type="password">
+                </div>
+            </div>
+
+            <div class="keyword-block sub-keyword-block">
+                <label class="keyword-block-line-title">- sub-keywords</label>
+                <input id="dec-button" class="" type="button" value="-">
+                <input id="inc-button" class="" type="button" value="+">
+
+                <div id="keyword-container" class="">
+                    <div class="keyword-unit">
+                        <input class="source-text" type="text">
+                        <span class="destination-text">****</span>
+                        <input class="copy-button" type="button" value="copy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- https://github.com/emn178/js-sha256 -->
+    <!-- https://www.npmjs.com/package/js-sha256 -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/js-sha256@0.11.0/build/sha256.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/js-sha256/build/sha256.min.js"></script>
+
+    <script src="./index.min.js"></script>
+</body>
+
+</html>
